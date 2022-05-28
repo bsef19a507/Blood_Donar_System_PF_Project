@@ -241,8 +241,8 @@ void updateDonar(string id){
             getline(ss,email,','); 
             
             if(ID == id){
-            	updated = 1;
             	updatedName = name;
+            	updated = 1;
         		system("cls");
 				cout<<endl;
 				cout << left << setw(10) << setfill(' ') << "ID";
@@ -275,6 +275,7 @@ void updateDonar(string id){
             		    cin.ignore();
             		    cout<<"Enter Name:";
 						getline(cin,newName);
+						updatedName = newName;
 						if(fin.is_open())
 						{
 			    			fout<<ID<<","<<newName<<","<<department<<","<<bloodGroup<<","<<no_of_donations<<","<<age<<","<<weight<<","<<phone<<","<<email<<"\n";
