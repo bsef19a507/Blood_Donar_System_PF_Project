@@ -511,6 +511,18 @@ void deleteDonar(string id){
 		system("cls");
     	cout<<"\nRecord Deleted Successfully!";
     	cout<<endl;
+        cout<<endl;
+		cout << left << setw(10) << setfill(' ') << "ID";
+    	cout << left << setw(15) << setfill(' ') << "Name";
+    	cout << left << setw(15) << setfill(' ') << "Department";
+    	cout << left << setw(12) << setfill(' ') << "Blood";
+    	cout << left << setw(15) << setfill(' ') << "Donations";
+    	cout << left << setw(6) << setfill(' ') << "Age";
+    	cout << left << setw(10) << setfill(' ') << "Weight";
+    	cout << left << setw(15) << setfill(' ') << "Phone";
+    	cout << left << setw(40) << setfill(' ') << "Email";
+		cout<<endl;
+        donarList();
 	
 	}else{
 		system("cls");
@@ -620,6 +632,18 @@ int main()
         case 4:
         {
         	system("cls");
+            cout<<endl;
+			cout << left << setw(10) << setfill(' ') << "ID";
+	    	cout << left << setw(15) << setfill(' ') << "Name";
+	    	cout << left << setw(15) << setfill(' ') << "Department";
+	    	cout << left << setw(12) << setfill(' ') << "Blood";
+	    	cout << left << setw(15) << setfill(' ') << "Donations";
+	    	cout << left << setw(6) << setfill(' ') << "Age";
+	    	cout << left << setw(10) << setfill(' ') << "Weight";
+	    	cout << left << setw(15) << setfill(' ') << "Phone";
+	    	cout << left << setw(40) << setfill(' ') << "Email";
+    		cout<<endl;
+            donarList();
             cin.ignore();
             string donarID;
             cout<<"\nEnter ID of Donar you want to Update: ";
@@ -629,8 +653,20 @@ int main()
         }
         break;
         case 5:
-        {
+        {	
         	system("cls");
+            cout<<endl;
+			cout << left << setw(10) << setfill(' ') << "ID";
+	    	cout << left << setw(15) << setfill(' ') << "Name";
+	    	cout << left << setw(15) << setfill(' ') << "Department";
+	    	cout << left << setw(12) << setfill(' ') << "Blood";
+	    	cout << left << setw(15) << setfill(' ') << "Donations";
+	    	cout << left << setw(6) << setfill(' ') << "Age";
+	    	cout << left << setw(10) << setfill(' ') << "Weight";
+	    	cout << left << setw(15) << setfill(' ') << "Phone";
+	    	cout << left << setw(40) << setfill(' ') << "Email";
+    		cout<<endl;
+            donarList();
             cin.ignore();
             string donarID;
             cout<<"\nEnter ID of Donar you want to Remove: ";
