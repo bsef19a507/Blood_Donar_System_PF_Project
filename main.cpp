@@ -575,6 +575,12 @@ int main()
             deleteDonar(donarID);
         }
         break;
+        case 6:
+        {
+        	system("cls");
+        	return 0;
+        }
+        break;
 
         default:
         {
