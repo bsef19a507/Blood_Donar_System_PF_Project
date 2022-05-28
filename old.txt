@@ -1,3 +1,0 @@
-1001,LAL,SE,A+,1,22,60,03106846514,redmoon@gmail.com
-1002,Ali,CS,B+,2,25,70,031554556,ali@gmail.com
-1003,LAL,IT,O+,4,21,65,0313544353,lal@gmail.com

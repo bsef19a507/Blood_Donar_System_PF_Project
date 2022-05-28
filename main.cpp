@@ -392,6 +392,97 @@ void updateDonar(string id){
 }
 
 
+
+
+// function to Delete donar...
+
+void deleteDonar(string id){
+	int deleted = 0;
+	
+    ofstream fout;
+    ifstream fin; 
+    
+    fin.open("temp.txt");
+    fout.open ("temp.txt");
+    
+    ifstream inFile("bds_donor_data.txt");
+    if (inFile.is_open())
+    {
+        string line;
+        while( getline(inFile,line) )
+        {
+				
+			stringstream ss(line);
+		    string name,ID,department,bloodGroup,no_of_donations,phone,email,age,weight;
+		    
+            getline(ss,ID,',');   
+            getline(ss,name,','); 
+            getline(ss,department,','); 
+            getline(ss,bloodGroup,',');   
+            getline(ss,no_of_donations,','); 
+            getline(ss,age,','); 
+            getline(ss,weight,',');   
+            getline(ss,phone,','); 
+            getline(ss,email,','); 
+            
+            if(ID == id){
+            	deleted = 1;
+            
+			}else{
+				if(fin.is_open())
+				{
+	    			fout<<ID<<","<<name<<","<<department<<","<<bloodGroup<<","<<no_of_donations<<","<<age<<","<<weight<<","<<phone<<","<<email<<"\n";
+				}
+			}
+
+		}
+        
+    }
+    
+    fin.close();
+    fout.close();
+    inFile.close();
+    
+    
+    ofstream newFile;
+    ifstream tempFile; 
+    
+    tempFile.open("temp.txt");
+    newFile.open ("bds_donor_data.txt");
+    if (tempFile.is_open())
+    {
+        string line;
+        while( getline(tempFile,line) )
+        {
+			newFile<<line<<"\n";
+		}
+	}
+	tempFile.close();
+    newFile.close();
+	
+	if(deleted == 1){
+		system("cls");
+    	cout<<"\nRecord Deleted Successfully!";
+    	cout<<endl;
+	
+	}else{
+		system("cls");
+    	cout<<"\nNo Record Found with this ID!";
+    	cout<<endl;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 int main()
 {
 
@@ -471,6 +562,17 @@ int main()
 			getline(cin, donarID);
 			system("cls");
             updateDonar(donarID);
+        }
+        break;
+        case 5:
+        {
+        	system("cls");
+            cin.ignore();
+            string donarID;
+            cout<<"\nEnter ID of Donar you want to Remove: ";
+			getline(cin, donarID);
+			system("cls");
+            deleteDonar(donarID);
         }
         break;
 
