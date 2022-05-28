@@ -21,6 +21,53 @@ struct Donar{
 };
 
 
+// function to view all Donars...
+void donarList(){
+	
+	ifstream inFile("bds_donor_data.txt");
+    if (inFile.is_open())
+    {
+        string line;
+        while( getline(inFile,line) )
+        {
+            stringstream ss(line);
+		    string name,ID,department,bloodGroup,no_of_donations,phone,email,age,weight;
+		    
+            getline(ss,ID,',');   
+            getline(ss,name,','); 
+            getline(ss,department,','); 
+            getline(ss,bloodGroup,',');   
+            getline(ss,no_of_donations,','); 
+            getline(ss,age,','); 
+            getline(ss,weight,',');   
+            getline(ss,phone,','); 
+            getline(ss,email,','); 
+            
+            
+        	cout << left << setw(10) << setfill(' ') << ID;
+	    	cout << left << setw(15) << setfill(' ') << name;
+	    	cout << left << setw(15) << setfill(' ') << department;
+	    	cout << left << setw(12) << setfill(' ') << bloodGroup;
+	    	cout << left << setw(15) << setfill(' ') << no_of_donations;
+	    	cout << left << setw(6) << setfill(' ') << age;
+	    	cout << left << setw(10) << setfill(' ') << weight;
+	    	cout << left << setw(15) << setfill(' ') << weight;
+	    	cout << left << setw(40) << setfill(' ') << email;
+	    	cout<<endl;
+			
+
+          
+        }
+    }
+	
+}
+
+
+
+
+
+
+
 //function to save donar records...
 void addDonar(){
 	
@@ -496,12 +543,29 @@ int main()
         cout<<"\n|      Blood Donor Management System      |"<<endl;
         cout<<"===========================================";
         cout<<"\n\n\t::Enter Your Choice::"<<endl;
-        cout<<"\n\t1. Add New Donar\n\t2. Search Donar by Name\n\t3. Search Donar List by Blood Group\n\t4. Update Donar\n\t5. Remove Donar\n\t6. Exit\n"<<endl;
+        cout<<"\n\t0. View All Donars\n\t1. Add New Donar\n\t2. Search Donar by Name\n\t3. Search Donar List by Blood Group\n\t4. Update Donar\n\t5. Remove Donar\n\t6. Exit\n"<<endl;
         cout<<"\tEnter Choice: ";
         cin>>n;
         switch (n)
         {
 
+		case 0:
+        {
+            system("cls");
+            cout<<endl;
+			cout << left << setw(10) << setfill(' ') << "ID";
+	    	cout << left << setw(15) << setfill(' ') << "Name";
+	    	cout << left << setw(15) << setfill(' ') << "Department";
+	    	cout << left << setw(12) << setfill(' ') << "Blood";
+	    	cout << left << setw(15) << setfill(' ') << "Donations";
+	    	cout << left << setw(6) << setfill(' ') << "Age";
+	    	cout << left << setw(10) << setfill(' ') << "Weight";
+	    	cout << left << setw(15) << setfill(' ') << "Phone";
+	    	cout << left << setw(40) << setfill(' ') << "Email";
+    		cout<<endl;
+            donarList();
+        }
+        break;
         case 1:
         {
             system("cls");
