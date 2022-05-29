@@ -92,19 +92,29 @@ void addDonar(){
 	cout<<"\tEnter Donar's Weight: ";
 	cin>>donar.weight;
 	
-    ofstream fout;
-    ifstream fin;
-    
-    fin.open("bds_donor_data.txt");
-    fout.open ("bds_donor_data.txt",ios::app);
-    
-    if(fin.is_open()){
-    	fout<<donar.ID<<","<<donar.name<<","<<donar.department<<","<<donar.bloodGroup<<","<<donar.no_of_donations<<","<<donar.age<<","<<donar.weight<<","<<donar.phone<<","<<donar.email<<"\n";
+	if(donar.age<18){
+		system("cls");
+		cout<<"\nDonar is not Eligible. Minimum Age limit is 18 Years.\n";
+	}else if(){
+		system("cls");
+		cout<<"\nDonar is not Eligible. Minimum Age limit is 18 Years.\n";
+	}else{
+		ofstream fout;
+	    ifstream fin;
+	    
+	    fin.open("bds_donor_data.txt");
+	    fout.open ("bds_donor_data.txt",ios::app);
+	    
+	    if(fin.is_open()){
+	    	fout<<donar.ID<<","<<donar.name<<","<<donar.department<<","<<donar.bloodGroup<<","<<donar.no_of_donations<<","<<donar.age<<","<<donar.weight<<","<<donar.phone<<","<<donar.email<<"\n";
+		}
+	    system("cls");
+	    cout<<"\nDonar Record Saved Successfully!"<<endl;
+	    fin.close();
+	    fout.close();
 	}
-    system("cls");
-    cout<<"\nDonar Record Saved Successfully!"<<endl;
-    fin.close();
-    fout.close();
+	
+  
    
 }
 
