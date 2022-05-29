@@ -95,9 +95,9 @@ void addDonar(){
 	if(donar.age<18){
 		system("cls");
 		cout<<"\nDonar is not Eligible. Minimum Age limit is 18 Years.\n";
-	}else if(){
+	}else if(donar.weight<50){
 		system("cls");
-		cout<<"\nDonar is not Eligible. Minimum Age limit is 18 Years.\n";
+		cout<<"\nDonar is not Eligible. Minimum Weight limit is 50 KG.\n";
 	}else{
 		ofstream fout;
 	    ifstream fin;
